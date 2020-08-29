@@ -1,0 +1,71 @@
+﻿@model Lab4_3_AspNetMVC_BlindDating.Models.DatingProfile
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DatingProfile</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DisplayName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DisplayName)
+        </dd>
+        @*Remove FirstName & LastName to display DisplayName...added by th 08242020*@
+        @*<dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>*@
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Bio)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Bio)
+        </dd>
+        <dd>
+            <img src="\userPhotos\@Html.DisplayFor(model => model.PhotoPath)" width="200" height="200" />
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserAccountId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserAccountId)
+        </dd>
+    </dl>
+</div>
+<div>
+    @*This view was created after the Scaffolding. It is created from the Details view with the following changes.*@
+    @*All authorized users can Browse but not all can Edit. This is available on Details View...added by th 08192020*@
+    @*<a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |*@
+
+    @*Allow all authorized users to Browse...added by th 08192020*@
+    <a asp-action="Browse">Back to List</a>
+
+    @*Access if for Admin only...added by th 08192020*@
+    @*<a asp-action="Index">Back to List</a>*@
+</div>

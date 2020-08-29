@@ -1,0 +1,84 @@
+﻿@model IEnumerable<Lab4_3_AspNetMVC_BlindDating.Models.DatingProfile>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DisplayName)
+            </th>
+            @*Remove FirstName & LastName to display DisplayName...added by th 08242020*@
+            @*<th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bio)
+            </th>
+            @*Hide for this page. Only Browsing is allowed...added by th 08192020*@
+            @*<th>
+            @Html.DisplayNameFor(model => model.UserAccountId)
+        </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DisplayName)
+            </td>
+            @*Remove FirstName & LastName to display DisplayName...added by th 08242020*@
+            @*<td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bio)
+            </td>
+            @*Hide for this page. Only Browsing is allowed...added by th 08192020*@
+            @*<td>
+            @Html.DisplayFor(modelItem => item.UserAccountId)
+        </td>*@
+            <td>
+                @*This view was created after the Scaffolding. It is created from the Index view with the following changes.*@
+                @*All authorized users can Browse but not all can Edit. This is available on Index View...added by th 08192020*@
+                @*<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |*@
+
+                @*Allow all authorized users can Show...added by th 08192020*@
+                <a asp-action="Show" asp-route-id="@item.Id">Show</a> @*|*@
+
+                @*Access if for Admin only...added by th 08192020*@
+                @*<a asp-action="Details" asp-route-id="@item.Id">Details</a> |*@
+
+                @*All authorized users can Browse but not all can Delete. This is available on Index View...added by th 08192020*@
+                @*<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>*@
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

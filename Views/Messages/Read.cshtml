@@ -1,0 +1,38 @@
+﻿@model Lab4_3_AspNetMVC_BlindDating.Models.MailMessage
+
+@{
+    ViewData["Title"] = "Mail Message";
+}
+
+<h2>Read Message</h2>
+
+<div>
+    <h4>DatingProfile</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MessageTitle)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MessageTitle)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MessageText)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MessageText)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsRead)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsRead)
+        </dd>
+    </dl>
+</div>
+<div>
+
+    @*Allow all authorized users to Browse...added by th 08192020*@
+    <a asp-action="inbox">Inbox</a>
+
+</div>
